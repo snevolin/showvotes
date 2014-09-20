@@ -21,6 +21,7 @@ class PluginShowvotes extends Plugin {
 	 * Plugin Initialization
 	 */
 	public function Init() {
+		$this->Viewer_AppendScript(Plugin::GetTemplatePath(__CLASS__)."js/poshytip_tooltip.js");
 		return true;
 	}
 }
