@@ -7,9 +7,9 @@
 		<lang name="default">Stanislav Nevolin (Wizard), Lora_GT</lang>
 	</author>
 	<homepage>http://showvotes.lsplugin.nevolin.info/</homepage>
-	<version>0.2</version>
+	<version>0.3</version>
 	<requires>
-		<livestreet>0.4.2</livestreet>
+		<livestreet>1.0</livestreet>
 		<plugins>
 		</plugins>
 	</requires>
