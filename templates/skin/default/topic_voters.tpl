@@ -10,6 +10,9 @@
 {assign var='oUser' value=$oVote->getUser()}
 								<a href="{$oUser->getUserWebPath()}">{$oUser->getLogin()}</a>{if !$smarty.foreach.showvotes_list.last}, {/if}
 {/foreach}
+{if $aVotes.positive_overcount}
+, ...
+{/if}
 								</li>
 {/if}
 								<li><i class="icon-synio-vote-info-down"></i> {$oTopic->getCountVoteDown()}{if $aVotes.negative}: 
@@ -17,6 +20,9 @@
 {assign var='oUser' value=$oVote->getUser()}
 								<a href="{$oUser->getUserWebPath()}">{$oUser->getLogin()}</a>{if !$smarty.foreach.showvotes_list.last}, {/if}
 {/foreach}
+{if $aVotes.negative_overcount}
+, ...
+{/if}
 								</li>
 {/if}
 								<li><i class="icon-synio-vote-info-zero"></i> {$oTopic->getCountVoteAbstain()}{if $aVotes.neutral}: 
@@ -24,6 +30,9 @@
 {assign var='oUser' value=$oVote->getUser()}
 								<a href="{$oUser->getUserWebPath()}">{$oUser->getLogin()}</a>{if !$smarty.foreach.showvotes_list.last}, {/if}
 {/foreach}
+{if $aVotes.neutral_overcount}
+, ...
+{/if}
 								</li>
 {/if}
 		</ul>
