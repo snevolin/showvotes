@@ -6,8 +6,8 @@
 	<author>
 		<lang name="default">Stanislav Nevolin (Wizard), Lora_GT</lang>
 	</author>
-	<homepage>http://showvotes.lsplugin.nevolin.info/</homepage>
-	<version>0.3</version>
+	<homepage>https://github.com/snevolin/showvotes</homepage>
+	<version>0.4</version>
 	<requires>
 		<livestreet>1.0</livestreet>
 		<plugins>
