@@ -19,7 +19,7 @@ class PluginShowvotes_ModuleVote extends Module {
 			$iCount = 0;
 			$aVotes[$sDirection] = $this->oMapper->GetTopicVotersByFilter($oTopic->getId(), array('direction' => $sDirection), $iCount, Config::Get('plugin.showvotes.' . $sDirection . '_display_limit'));
 			$aVotes[$sDirection . '_count'] = $iCount;
-			$aVotes[$sDirection . '_overcount'] = ($iCount > Config::Get('plugin.showvotes.' . $sDirection . '_display_limit'));
+			$aVotes[$sDirection . '_overcount'] = (Config::Get('plugin.showvotes.' . $sDirection . '_display_limit') > -1 && $iCount > Config::Get('plugin.showvotes.' . $sDirection . '_display_limit'));
 			array_map(function($oVote) {
 				$oVote->setUser($this->User_GetUserById($oVote->getVoterId()));
 			}, $aVotes[$sDirection]);

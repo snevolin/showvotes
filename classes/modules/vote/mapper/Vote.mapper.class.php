@@ -13,10 +13,12 @@ class PluginShowvotes_ModuleVote_MapperVote extends Mapper {
 				AND
 					target_id = ?d
 				{$sWhere}
-				LIMIT ?d
 		";
+		if (is_int($iLimit) && $iLimit>-1) {
+			$sql .= " LIMIT {$iLimit}";
+		}
 		$aResult = array();
-		if ($aVotes = $this->oDb->selectPage($iCount, $sql, $sTargetId, $iLimit)) {
+		if ($aVotes = $this->oDb->selectPage($iCount, $sql, $sTargetId)) {
 			foreach ($aVotes as $aVote) {
 				$aResult[] = Engine::GetEntity('ModuleVote_EntityVote', $aVote);
 			}
